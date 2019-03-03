@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mapper.TOrgMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.entity.TOrg">
+        <id column="ID" property="id" />
+        <result column="TYPE" property="type" />
+        <result column="NAME" property="name" />
+        <result column="ORG_DESC" property="orgDesc" />
+        <result column="ADDRESS" property="address" />
+        <result column="POSTCODE" property="postcode" />
+        <result column="TELEPHONE" property="telephone" />
+        <result column="FAX" property="fax" />
+        <result column="EMAIL" property="email" />
+        <result column="URL" property="url" />
+        <result column="CONTACT" property="contact" />
+        <result column="BIND_CLASS_ID" property="bindClassId" />
+        <result column="CREATE_USER" property="createUser" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="MODIFY_USER" property="modifyUser" />
+        <result column="MODIFY_DATE" property="modifyDate" />
+        <result column="IS_VALID" property="isValid" />
+        <result column="DATA5" property="data5" />
+        <result column="DATA4" property="data4" />
+        <result column="DATA3" property="data3" />
+        <result column="DATA1" property="data1" />
+        <result column="DATA2" property="data2" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, TYPE, NAME, ORG_DESC, ADDRESS, POSTCODE, TELEPHONE, FAX, EMAIL, URL, CONTACT, BIND_CLASS_ID, CREATE_USER, CREATE_DATE, MODIFY_USER, MODIFY_DATE, IS_VALID, DATA5, DATA4, DATA3, DATA1, DATA2
+    </sql>
+
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="person.mapper.TPersonMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="person.entity.TPerson">
+        <id column="ID" property="id" />
+        <result column="TYPE" property="type" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="NAME" property="name" />
+        <result column="SEX" property="sex" />
+        <result column="AGE" property="age" />
+        <result column="BIRTHDAY" property="birthday" />
+        <result column="ID_CARD_NUMBER" property="idCardNumber" />
+        <result column="JOB_NUMBER" property="jobNumber" />
+        <result column="JOB" property="job" />
+        <result column="EDUCATION" property="education" />
+        <result column="graduation" property="graduation" />
+        <result column="address" property="address" />
+        <result column="telephones" property="telephones" />
+        <result column="emails" property="emails" />
+        <result column="courses" property="courses" />
+        <result column="data1" property="data1" />
+        <result column="data2" property="data2" />
+        <result column="data3" property="data3" />
+        <result column="data4" property="data4" />
+        <result column="data5" property="data5" />
+        <result column="login_name" property="loginName" />
+        <result column="login_password" property="loginPassword" />
+        <result column="last_login_ip" property="lastLoginIp" />
+        <result column="last_login_date" property="lastLoginDate" />
+        <result column="valid_date" property="validDate" />
+        <result column="action_group_id" property="actionGroupId" />
+        <result column="avatar_path" property="avatarPath" />
+        <result column="avatar_path_small" property="avatarPathSmall" />
+        <result column="im_account_id" property="imAccountId" />
+        <result column="create_user" property="createUser" />
+        <result column="create_date" property="createDate" />
+        <result column="modify_user" property="modifyUser" />
+        <result column="modify_date" property="modifyDate" />
+        <result column="is_valid" property="isValid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, TYPE, ORG_ID, NAME, SEX, AGE, BIRTHDAY, ID_CARD_NUMBER, JOB_NUMBER, JOB, EDUCATION, graduation, address, telephones, emails, courses, data1, data2, data3, data4, data5, login_name, login_password, last_login_ip, last_login_date, valid_date, action_group_id, avatar_path, avatar_path_small, im_account_id, create_user, create_date, modify_user, modify_date, is_valid
+    </sql>
+
+</mapper>
