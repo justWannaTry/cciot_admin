@@ -1,5 +1,9 @@
 package com.cciot.admin.common.login.service.impl;
 
+import com.cciot.admin.common.exception.CciotException;
+import com.cciot.admin.common.exception.DataNotFoundException;
+import com.cciot.admin.common.exception.ExceptionEnum;
+import com.cciot.admin.common.exception.UserOrPasswordException;
 import com.cciot.admin.common.login.entity.LoginBack;
 import com.cciot.admin.common.login.entity.LoginInfo;
 import com.cciot.admin.common.login.service.LoginManagerService;
@@ -35,7 +39,7 @@ public class LoginManagerServiceImpl implements LoginManagerService {
      * @author yiqiang.zhang
      */
     @Override
-    public LoginBack checkPersonLogin(LoginInfo loginInfo) {
+    public LoginBack checkPersonLogin(LoginInfo loginInfo) throws Exception {
         HashMap<String, Object> stringObjectHashMap = new HashMap<>();
         stringObjectHashMap.put("login_name", loginInfo.getUsername());
         stringObjectHashMap.put("login_password", loginInfo.getUserPassword());
@@ -53,7 +57,7 @@ public class LoginManagerServiceImpl implements LoginManagerService {
             }
             return loginBack;
         } else {
-            return null;
+            throw new UserOrPasswordException(ExceptionEnum.USER_PASSWORD_ERROR);
         }
     }
 }

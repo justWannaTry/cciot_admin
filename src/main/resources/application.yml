@@ -1,5 +1,8 @@
 # ====================mysql====================
 spring:
+  server:
+    port:8080
+    path:/cciot_admin
   datasource:
     url: jdbc:mysql://122.152.216.13:3306/cciot_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
     username: root

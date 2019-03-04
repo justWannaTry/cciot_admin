@@ -1,11 +1,14 @@
 package com.cciot.admin.common.login.controller;
 
+import com.cciot.admin.common.exception.DataNotFoundException;
 import com.cciot.admin.common.login.entity.LoginBack;
 import com.cciot.admin.common.login.entity.LoginInfo;
 import com.cciot.admin.common.login.service.LoginManagerService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,8 +25,9 @@ public class LoginManagerController {
     @Autowired
     private LoginManagerService loginManagerService;
 
-    @GetMapping("/")
-    public LoginBack checkPersonLogin(LoginInfo loginInfo){
+    @PostMapping
+    @ApiOperation("登入")
+    public LoginBack checkPersonLogin(LoginInfo loginInfo) throws Exception {
         return loginManagerService.checkPersonLogin(loginInfo);
     }
 

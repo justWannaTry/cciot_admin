@@ -1,5 +1,7 @@
 package com.cciot.admin.common.login.service;
 
+import com.cciot.admin.common.exception.DataNotFoundException;
+import com.cciot.admin.common.exception.UserOrPasswordException;
 import com.cciot.admin.common.login.entity.LoginBack;
 import com.cciot.admin.common.login.entity.LoginInfo;
 
@@ -17,5 +19,5 @@ public interface LoginManagerService {
      * @param loginInfo
      * @return
      */
-    LoginBack checkPersonLogin(LoginInfo loginInfo);
+    LoginBack checkPersonLogin(LoginInfo loginInfo) throws DataNotFoundException, UserOrPasswordException, Exception;
 }

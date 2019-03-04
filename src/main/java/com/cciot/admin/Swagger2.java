@@ -29,7 +29,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(basePackage("com.cciot.admin.device.controller"+splitor+"com.cciot.admin.common.menu.controller"))
+                .apis(basePackage("com.cciot.admin.device.controller"+splitor+"com.cciot.admin.common.menu.controller"+splitor+"com.cciot.admin.common.login.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
