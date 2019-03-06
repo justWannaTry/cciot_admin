@@ -26,7 +26,7 @@ public class LoginManagerController {
     private LoginManagerService loginManagerService;
 
     @PostMapping
-    @ApiOperation("登入")
+    @ApiOperation("登入 ")
     public LoginBack checkPersonLogin(LoginInfo loginInfo) throws Exception {
         return loginManagerService.checkPersonLogin(loginInfo);
     }
