@@ -86,6 +86,7 @@
 	</dependencies>
 
 	<build>
+		<defaultGoal>compile</defaultGoal>
         <finalName>cciot_admin</finalName>
 		<plugins>
 			<plugin>
